@@ -15,12 +15,13 @@ export const StatsRow: React.FC = () => {
           {statsData.map((stat, idx) => (
             <div
               key={idx}
-              className="bento-card"
+              className={`bento-card reveal reveal-delay-${idx + 1}`}
               style={{
                 padding: 'clamp(1.1rem, 3vw, 1.65rem) clamp(0.9rem, 2.5vw, 1.4rem)',
                 display: 'flex',
                 flexDirection: 'column',
-                justifyContent: 'space-between'
+                justifyContent: 'space-between',
+                transition: 'background 0.3s ease, border-color 0.3s ease, transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.85s ease, filter 0.85s ease'
               }}
             >
               <div

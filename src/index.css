@@ -1,36 +1,48 @@
 /* ==========================================================================
-   HANNAH ELANGOVAN — COINCOMPASS FOREST GREEN DESIGN SYSTEM
+   HANNAH ELANGOVAN — HYBRID EXECUTIVE DESIGN SYSTEM
+   Light Cream/Sage Canvas & Dark Forest Green Bento Cards
    Fully Responsive: Mobile (320px+) · Tablet (768px+) · Desktop (1280px+)
    ========================================================================== */
 
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap');
 
 :root {
-  --green-deep:     #0a2a12;
-  --green-mid:      #0d3617;
-  --green-light:    #12401e;
-  --green-card:     #0f3318;
-  --green-card-h:   #133d1e;
+  /* Canvas Backgrounds (Light Theme) */
+  --frame-bg:       #e2e8df; /* Light Sage Frame Border */
+  --bg-cream:       #f7f9f5; /* Light Cream Canvas background */
 
-  --lime:           #c8f542;
+  /* Card backgrounds (Solid Dark Forest Green) */
+  --green-deep:     #08170e;
+  --green-mid:      #0c2517;
+  --green-light:    #10301d;
+  --green-card:     #0d3617; /* Classic solid dark forest green (#0d3617) */
+  --green-card-h:   #12401e; /* Card hover background */
+
+  --lime:           #c8f542; /* Vibrant accent lime/mint green for dark cards */
   --lime-hover:     #d4f76a;
   --lime-dim:       rgba(200, 245, 66, 0.15);
   --lime-glow:      rgba(200, 245, 66, 0.35);
 
-  --frame-bg:       #e3e8dc;
   --frame-pad:      clamp(6px, 2vw, 40px);
 
-  --text-white:     #ffffff;
-  --text-primary:   rgba(255, 255, 255, 0.95);
-  --text-secondary: rgba(255, 255, 255, 0.62);
-  --text-muted:     rgba(255, 255, 255, 0.38);
+  /* Page Canvas Typography (Dark text on light background) */
+  --text-white:     #ffffff; /* White text for inside cards */
+  --text-primary:   #111827; /* Dark charcoal */
+  --text-secondary: #374151; /* Dark gray */
+  --text-muted:     #6b7280; /* Muted gray */
 
-  --card-bg:        rgba(255, 255, 255, 0.07);
-  --card-bg-h:      rgba(255, 255, 255, 0.13);
-  --card-border:    rgba(255, 255, 255, 0.12);
-  --card-border-h:  rgba(255, 255, 255, 0.22);
-  --card-shadow:    rgba(0, 0, 0, 0.3) 0px 16px 36px -12px;
-  --card-radius:    14px;
+  /* Card Typography (Light text on dark green cards) */
+  --text-card-primary:   rgba(255, 255, 255, 0.95);
+  --text-card-secondary: rgba(255, 255, 255, 0.65);
+  --text-card-muted:     rgba(255, 255, 255, 0.42);
+
+  /* Bento Card Styles */
+  --card-bg:        #0d3617;
+  --card-bg-h:      #12401e;
+  --card-border:    rgba(255, 255, 255, 0.08);
+  --card-border-h:  rgba(255, 255, 255, 0.18);
+  --card-shadow:    rgba(0, 0, 0, 0.12) 0px 16px 36px -12px;
+  --card-radius:    16px;
 
   --font-heading: 'DM Sans', -apple-system, system-ui, sans-serif;
   --font-body:    'DM Sans', -apple-system, system-ui, sans-serif;
@@ -40,7 +52,7 @@
   --main-radius:    24px;
   --ease-smooth:    cubic-bezier(0.16, 1, 0.3, 1);
 
-  /* Responsive spacing scale */
+  /* Spacing Scale */
   --space-section: clamp(3rem, 6vw, 6rem);
   --space-card:    clamp(1.25rem, 3vw, 2.25rem);
 }
@@ -80,27 +92,27 @@ body {
    SELECTION
    ======================== */
 ::selection {
-  background: var(--lime);
-  color: var(--green-deep);
+  background: #1b4332;
+  color: #ffffff;
 }
 
 /* ========================
    SCROLLBAR
    ======================== */
-::-webkit-scrollbar { width: 4px; height: 4px; }
-::-webkit-scrollbar-track { background: var(--green-deep); }
-::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.18); border-radius: 4px; }
-::-webkit-scrollbar-thumb:hover { background: var(--lime); }
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: #e8ece5; }
+::-webkit-scrollbar-thumb { background: rgba(27,67,50,0.18); border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: #1b4332; }
 
 /* ========================
    TYPOGRAPHY
    ======================== */
 h1, h2, h3, h4, .font-heading {
   font-family: var(--font-heading);
-  color: var(--text-white);
-  font-weight: 400;
-  line-height: 1.12;
-  letter-spacing: -0.04em;
+  color: var(--text-primary);
+  font-weight: 500;
+  line-height: 1.15;
+  letter-spacing: -0.035em;
 }
 
 h1 {
@@ -121,27 +133,33 @@ h3 {
 
 p {
   color: var(--text-secondary);
-  font-size: clamp(0.84rem, 1.4vw, 0.95rem);
+  font-size: clamp(0.84rem, 1.4vw, 0.96rem);
   line-height: 1.68;
   font-weight: 400;
 }
 
 /* ========================
-   COLORS
+   COLORS & TEXT ACCENTS
    ======================== */
-.lime-text           { color: var(--lime); }
-.gradient-text-cyan  { color: var(--lime); }
-.gradient-text-blue  { color: var(--lime); }
+.lime-text           { color: #1b4332; font-weight: 600; }
+.gradient-text-cyan  { color: #1b4332; font-weight: 600; }
+.gradient-text-blue  { color: #1b4332; font-weight: 600; }
+
+/* In-Card Accents override */
+.bento-card .lime-text           { color: var(--lime); }
+.bento-card .gradient-text-cyan  { color: var(--lime); }
+.bento-card .gradient-text-blue  { color: var(--lime); }
 
 /* ========================
-   OUTER FRAME + BG
+   OUTER FRAME + CANVAS
    ======================== */
 .bento-mesh-bg {
-  background: linear-gradient(160deg, var(--green-deep) 0%, var(--green-mid) 45%, var(--green-deep) 100%);
+  background: #f7f9f5;
   border-radius: var(--main-radius);
   overflow: hidden;
   min-height: calc(100vh - 2 * var(--frame-pad));
   position: relative;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 20px 60px;
 }
 
 .bento-mesh-bg::before {
@@ -151,22 +169,22 @@ p {
   left: 30%;
   width: 60%;
   height: 60%;
-  background: radial-gradient(ellipse, rgba(100, 220, 80, 0.2) 0%, transparent 70%);
+  background: radial-gradient(ellipse, rgba(27, 67, 50, 0.04) 0%, transparent 70%);
   pointer-events: none;
   z-index: 0;
 }
 
 /* ========================
-   GLASS CARDS
+   GLASS CARDS (Dark Theme inside Light Theme)
    ======================== */
 .bento-card {
   background: var(--card-bg);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border: 0.8px solid var(--card-border);
+  border: 1px solid var(--card-border);
   border-radius: var(--card-radius);
   box-shadow: var(--card-shadow);
-  transition: transform 0.3s var(--ease-smooth), background 0.3s ease, border-color 0.3s ease;
+  transition: transform 0.3s var(--ease-smooth), background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
   position: relative;
   overflow: hidden;
 }
@@ -176,7 +194,7 @@ p {
     background: var(--card-bg-h);
     border-color: var(--card-border-h);
     transform: translateY(-3px) scale(1.005);
-    box-shadow: rgba(0,0,0,0.45) 0px 22px 48px -14px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 22px 48px -14px;
   }
 }
 
@@ -215,7 +233,7 @@ p {
 }
 
 /* ========================
-   BUTTONS
+   BUTTONS (Inside Dark green cards)
    ======================== */
 .btn-primary {
   display: inline-flex;
@@ -225,7 +243,7 @@ p {
   padding: 0.72rem 1.4rem;
   font-family: var(--font-body);
   font-size: 0.84rem;
-  font-weight: 500;
+  font-weight: 600;
   letter-spacing: -0.01em;
   text-decoration: none;
   border-radius: 9999px;
@@ -240,9 +258,9 @@ p {
 
 @media (hover: hover) {
   .btn-primary:hover {
-    transform: translateY(-2px) scale(1.03);
+    transform: translateY(-2px) scale(1.02);
     background: var(--lime-hover);
-    box-shadow: rgba(200,245,66,0.5) 0px 12px 32px -6px;
+    box-shadow: rgba(200, 245, 66, 0.45) 0px 12px 32px -6px;
   }
 }
 
@@ -258,58 +276,72 @@ p {
   letter-spacing: -0.01em;
   text-decoration: none;
   border-radius: 9999px;
-  background: transparent;
-  color: var(--text-white);
-  border: 0.8px solid rgba(255,255,255,0.25);
+  background: #ffffff;
+  color: #1b4332;
+  border: 1px solid rgba(27, 67, 50, 0.22);
   cursor: pointer;
   transition: all 0.25s var(--ease-smooth);
+  box-shadow: none;
   white-space: nowrap;
 }
 
 @media (hover: hover) {
   .btn-secondary:hover {
-    background: rgba(255,255,255,0.06);
-    border-color: rgba(255,255,255,0.4);
+    background: #f0f5ee;
+    border-color: rgba(27, 67, 50, 0.4);
     transform: translateY(-2px);
+  }
+}
+
+.bento-card .btn-secondary {
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--text-white);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+@media (hover: hover) {
+  .bento-card .btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.12);
+    border-color: rgba(255, 255, 255, 0.28);
   }
 }
 
 /* ========================
    PILLS & TAGS
    ======================== */
+/* Canvas default pills */
 .bento-pill {
   display: inline-flex;
   align-items: center;
   gap: 0.4rem;
   padding: 0.28rem 0.8rem;
   border-radius: 9999px;
-  font-size: 0.7rem;
-  font-weight: 500;
+  font-size: 0.72rem;
+  font-weight: 600;
   letter-spacing: 0.01em;
-  background: rgba(255,255,255,0.07);
-  border: 0.8px solid rgba(255,255,255,0.14);
-  color: var(--text-secondary);
-  backdrop-filter: blur(8px);
+  background: rgba(27, 67, 50, 0.06);
+  border: 1px solid rgba(27, 67, 50, 0.16);
+  color: #1b4332;
   white-space: nowrap;
 }
 
 .bento-pill-cyan {
-  background: rgba(200,245,66,0.1);
-  border-color: rgba(200,245,66,0.28);
-  color: var(--lime);
+  background: rgba(27, 67, 50, 0.10);
+  border-color: rgba(27, 67, 50, 0.25);
+  color: #1b4332;
 }
 
 .bento-pill-mint {
-  background: rgba(200,245,66,0.08);
-  border-color: rgba(200,245,66,0.22);
-  color: #b5e23a;
+  background: rgba(27, 67, 50, 0.08);
+  border-color: rgba(27, 67, 50, 0.2);
+  color: #1b4332;
 }
 
 .icon-lime-bg {
-  background: rgba(200,245,66,0.15);
-  border: 0.8px solid rgba(200,245,66,0.28);
+  background: rgba(27, 67, 50, 0.1);
+  border: 1px solid rgba(27, 67, 50, 0.2);
   border-radius: 10px;
-  color: var(--lime);
+  color: #1b4332;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -321,10 +353,41 @@ p {
   font-weight: 500;
   padding: 0.24rem 0.68rem;
   border-radius: 9999px;
-  background: rgba(255,255,255,0.06);
-  border: 0.8px solid rgba(255,255,255,0.12);
-  color: var(--text-muted);
+  background: #f0f4ee;
+  border: 1px solid rgba(27, 67, 50, 0.14);
+  color: var(--text-secondary);
   white-space: nowrap;
+}
+
+/* Bento Card specific overrides (nested cards) */
+.bento-card .bento-pill {
+  background: rgba(200, 245, 66, 0.12);
+  border-color: rgba(200, 245, 66, 0.24);
+  color: var(--lime);
+}
+
+.bento-card .bento-pill-cyan {
+  background: rgba(200, 245, 66, 0.15);
+  border-color: rgba(200, 245, 66, 0.35);
+  color: var(--lime);
+}
+
+.bento-card .bento-pill-mint {
+  background: rgba(200, 245, 66, 0.12);
+  border-color: rgba(200, 245, 66, 0.25);
+  color: var(--lime);
+}
+
+.bento-card .icon-lime-bg {
+  background: rgba(200, 245, 66, 0.14);
+  border: 1px solid rgba(200, 245, 66, 0.25);
+  color: var(--lime);
+}
+
+.bento-card .tag-chip {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  color: var(--text-card-secondary);
 }
 
 /* ========================
@@ -347,7 +410,7 @@ p {
   position: fixed;
   top: 0; left: 0;
   width: 6px; height: 6px;
-  background: var(--lime);
+  background: #1b4332;
   border-radius: 50%;
   pointer-events: none;
   z-index: 9999;
@@ -359,7 +422,7 @@ p {
   position: fixed;
   top: 0; left: 0;
   width: 30px; height: 30px;
-  border: 1px solid rgba(200,245,66,0.45);
+  border: 1px solid rgba(27, 67, 50, 0.45);
   border-radius: 50%;
   pointer-events: none;
   z-index: 9998;
@@ -367,8 +430,8 @@ p {
   transition: transform 0.14s var(--ease-smooth), width 0.22s ease, height 0.22s ease;
 }
 
-.custom-cursor-dot.hovering  { width: 10px; height: 10px; background: #fff; }
-.custom-cursor-halo.hovering { width: 46px; height: 46px; border-color: var(--lime); background: rgba(200,245,66,0.05); }
+.custom-cursor-dot.hovering  { width: 10px; height: 10px; background: #1b4332; }
+.custom-cursor-halo.hovering { width: 46px; height: 46px; border-color: #1b4332; background: rgba(27, 67, 50, 0.08); }
 
 /* ========================
    HORIZONTAL SCROLL — touch
@@ -398,7 +461,7 @@ p {
   position: fixed;
   inset: 0;
   z-index: 200;
-  background: rgba(5, 20, 8, 0.85);
+  background: rgba(12, 13, 18, 0.7);
   backdrop-filter: blur(10px);
   display: flex;
   align-items: center;
@@ -412,7 +475,7 @@ p {
    ======================== */
 @media (max-width: 639px) {
   :root {
-    --card-radius: 12px;
+    --card-radius: 14px;
     --main-radius: 16px;
     --frame-pad: 6px;
   }
@@ -455,4 +518,40 @@ p {
 }
 @media (max-width: 899px) {
   .desktop-only { display: none !important; }
+}
+
+/* ========================
+   SCROLL REVEAL ANIMATIONS
+   ======================== */
+.reveal {
+  opacity: 0;
+  filter: blur(12px);
+  transform: translateY(24px) scale(0.98);
+  transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1),
+              filter 0.85s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, filter, transform;
+}
+
+.reveal.active {
+  opacity: 1;
+  filter: blur(0px);
+  transform: translateY(0) scale(1);
+}
+
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+.reveal-delay-3 { transition-delay: 0.3s; }
+.reveal-delay-4 { transition-delay: 0.4s; }
+.reveal-delay-5 { transition-delay: 0.5s; }
+
+/* Ensure background shader canvas is rendering in the background */
+.bento-mesh-bg {
+  position: relative;
+  z-index: 1;
+}
+
+.bento-mesh-bg > *:not(canvas) {
+  position: relative;
+  z-index: 2;
 }

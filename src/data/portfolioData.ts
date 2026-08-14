@@ -8,13 +8,27 @@ import { StatItem, VentureItem, EducationItem, SkillCategory, AchievementItem, M
 export const personalData = {
   name: "Hannah Elangovan",
   tagline: "E-Commerce Founder & Legal Scholar",
-  subheadline: "Innovatively driven entrepreneur with 5+ years building and scaling a successful E-Commerce business, now pursuing a rigorous legal education at the University of London.",
-  bio: "An innovatively driven 21-year-old with five years of experience building and scaling a successful E-Commerce business, seeking to leverage proven leadership, strategic problem-solving, and negotiation skills to excel in a rigorous legal education.",
+  subheadline: "Innovatively driven, entrepreneurial 21-year-old with three years of experience building and scaling a successful E Commerce business, seeking to leverage proven leadership, strategic problem-solving, and negotiation skills to excel in a rigorous legal education.",
+  bio: "Innovatively driven, entrepreneurial 21-year-old with three years of experience building and scaling a successful E Commerce business, seeking to leverage proven leadership, strategic problem-solving, and negotiation skills to excel in a rigorous legal education.",
   email: "hannahpanthea@gmail.com",
   phone: "+94 778973708",
   linkedin: "https://linkedin.com/in/hannah-elangovan-186a54355",
   location: "Colombo, Sri Lanka",
-  status: "Open for Strategic Advisory & Collaborations"
+  status: "Open for Strategic Advisory & Collaborations",
+  references: [
+    {
+      name: "Mr. Abhishek K",
+      role: "Full Stack Developer – Assimilate Technologies, Pune, MH, India",
+      phone: "+918606243568",
+      email: "abhishekalangad@gmail.com"
+    },
+    {
+      name: "Dr. Sanjaya Gunasekara",
+      role: "Medical Officer – Base Hospital Bibila",
+      phone: "+940765575732",
+      email: "sanjayaktl97@gmail.com"
+    }
+  ]
 };
 
 export const statsData: StatItem[] = [
@@ -59,6 +73,7 @@ export const venturesData: VentureItem[] = [
       "Utilised Canva and Prompt Engineering for creative assets and campaign automation."
     ],
     tags: ["E-Commerce", "Fashion Accessories", "Social Commerce", "Canva", "Prompt Engineering"],
+    domain: "webmall.lk",
     metrics: [
       { label: "Active Scaling", value: "5+ Years" },
       { label: "Catalog", value: "Multi-Category" },
@@ -81,6 +96,7 @@ export const venturesData: VentureItem[] = [
       "Delivered sessions on entrepreneurship development, leadership training, and outbound learning."
     ],
     tags: ["Leadership Training", "Outbound Entrepreneurship", "International Keynote", "Kochi Business School"],
+    domain: "kbs.edu.in",
     link: "https://kbs.edu.in/event/antha-prerna-2025-igniting-inner-drive-shaping-future-leaders.html",
     linkText: "Verify KBS Official Event",
     metrics: [
@@ -103,6 +119,7 @@ export const venturesData: VentureItem[] = [
       "Connected with South Asian e-commerce leaders and founders."
     ],
     tags: ["Digital Commerce", "Women Founders", "Daraz", "E-Commerce Summit"],
+    domain: "daraz.lk/summit",
     metrics: [
       { label: "Organiser", value: "Daraz" },
       { label: "Category", value: "E-Commerce" }
@@ -117,6 +134,7 @@ export const venturesData: VentureItem[] = [
     lottiePath: "lottie/teacher.json",
     badge: "LCME London",
     shortDesc: "Diploma in Drama & Communication Teaching from the University of West London (LCME) — certified in speech pedagogy and rhetorical communication.",
+    domain: "uwl.ac.uk/lcme",
     highlights: [
       "Awarded Dip.LCM (TD) — Drama and Communication Teaching by University of West London (LCME).",
       "Trained in vocal projection, communication theory, dramatic arts, and public speaking.",
@@ -276,7 +294,10 @@ export const modalDetailsData: Record<string, ModalDetailRecord> = {
       "Proficient in social media platforms for product promotion, marketing and sales.",
       "Utilises Canva for creative content and Prompt Engineering for automation.",
       "5+ years of continuous operational scaling."
-    ]
+    ],
+    link: "https://web-mall-sand.vercel.app",
+    linkText: "Visit Web Mall Website",
+    iframeUrl: "https://web-mall-sand.vercel.app"
   },
   "antha-prerna": {
     title: "ANTHA PRERNA 2025 — Keynote Dossier",
@@ -344,23 +365,25 @@ export const modalDetailsData: Record<string, ModalDetailRecord> = {
     ]
   },
   "resume": {
-    title: "Hannah Elangovan — Professional Profile",
+    title: "Hannah Elangovan — Official Resume & Profile",
     subtitle: "E-Commerce Founder & Legal Scholar",
-    period: "2021 — Present",
+    period: "July 2024 — Present",
     narrative: [
-      "Hannah Elangovan is an innovatively driven, entrepreneurial 21-year-old with five years of experience building and scaling a successful E-Commerce business.",
-      "She is currently pursuing a Bachelor of Laws (LL.B) at the University of London, seeking to leverage proven leadership, strategic problem-solving, and negotiation skills to excel in a rigorous legal education.",
-      "Her profile spans e-commerce operations, speech pedagogy, special needs education, and international keynote facilitation."
+      "Innovatively driven, entrepreneurial 21-year-old with three years of experience building and scaling a successful E Commerce business, seeking to leverage proven leadership, strategic problem-solving, and negotiation skills to excel in a rigorous legal education.",
+      "Currently pursuing a Bachelor of Laws (LL.B) at the University of London, bringing together practical enterprise execution, speech pedagogy, special needs education, and international keynote experience."
     ],
     highlights: [
-      "Founder & CEO: Web Mall (Pvt) Ltd — E-Commerce (Fashion, Bags, Apparel, Ornaments).",
-      "Bachelor of Laws (LL.B): University of London — July 2024 to Present.",
-      "Dip.LCM (TD) Drama & Communication Teaching: University of West London (LCME), 2023.",
-      "Diploma in Special Needs Education: London School of Business & Social Sciences, 2023.",
-      "Cambridge International O/Level: Lyceum International School, Nugegoda, 2021.",
-      "International Resource Person: ANTHA PRERNA 2025, Kochi Business School, Kerala.",
-      "All-Island Winner: British Performing Arts Festivals in Diverse Categories.",
-      "Participant: Daraz Women in E-Commerce Summit, 2022."
-    ]
+      "Objective: Entrepreneurial 21-year-old leveraging proven leadership & strategic problem solving in legal education.",
+      "Current Education: Bachelor of Laws (LL.B) — University of London (July 2024 – Present).",
+      "Education Credentials: Dip.LCM (TD) Drama & Communication Teaching (Univ of West London, 2023), Diploma in Special Needs Education (2023), Cambridge O/Level (Lyceum, 2021).",
+      "Keynote Project: ANTHA PRERNA 2025 International Resource Person at Kochi Business School, Kerala, India.",
+      "Initiative: Founder & CEO of Web Mall (Pvt) Ltd — E-Commerce business in fashion accessories, bags, apparel, & ornaments.",
+      "Skills & Tools: Microsoft Office, Social Commerce Marketing & Sales, Canva, Prompt Engineering, Languages (English, Sinhala, Hindi).",
+      "Soft Skills: Public Speaking, Strategic Planning, Critical Thinking, Contract & Legal Foundations, Leadership, Article Writing.",
+      "Honors: All-Island Winner at British Performing Arts Festivals, Inter-House Drama Winner.",
+      "Professional References: Mr. Abhishek K (Full Stack Developer, Assimilate Tech) & Dr. Sanjaya Gunasekara (Medical Officer, Base Hospital Bibila)."
+    ],
+    link: "/Hannah_Elangovan_Resume.pdf",
+    linkText: "Download PDF Resume"
   }
 };

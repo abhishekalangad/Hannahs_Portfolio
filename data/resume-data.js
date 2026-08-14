@@ -176,7 +176,7 @@ const portfolioData = {
       desc: "Directed and performed in winning productions, demonstrating exceptional stage presence and leadership."
     },
     {
-      title: "Founder of Web Mall (Pvt) Ltd at Age 18",
+      title: "Founder of Web Mall (Pvt) Ltd at Age 16",
       category: "Youth Entrepreneurship",
       year: "2021",
       desc: "Established and registered an e-commerce corporation, navigating logistics, payments, and product sourcing."

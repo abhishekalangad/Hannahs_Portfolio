@@ -1,12 +1,16 @@
 import React, { useState, useEffect, useRef } from 'react';
 import lottie from 'lottie-web';
-import { BookOpen, GraduationCap, ChevronDown, CheckCircle2, Award } from 'lucide-react';
+import { GraduationCap, ChevronDown, CheckCircle2, Award } from 'lucide-react';
 import { educationData } from '../data/portfolioData';
 import { EducationItem } from '../types/portfolio';
+import { useTilt } from '../utils/animations';
 
 const TimelineLedgerItem: React.FC<{ item: EducationItem; index: number }> = ({ item, index }) => {
   const [isExpanded, setIsExpanded] = useState(index === 0);
   const lottieRef = useRef<HTMLDivElement>(null);
+  
+  // Wrap education card inside 3D tilt interaction
+  const cardRef = useTilt<HTMLDivElement>();
 
   useEffect(() => {
     let anim: any = null;
@@ -26,10 +30,12 @@ const TimelineLedgerItem: React.FC<{ item: EducationItem; index: number }> = ({ 
 
   return (
     <div
+      className="reveal reveal-delay-2"
       style={{
         position: 'relative',
         paddingLeft: 'clamp(2.5rem, 5vw, 4.25rem)',
-        marginBottom: '2.5rem'
+        marginBottom: '2.5rem',
+        transition: 'opacity 0.8s ease, filter 0.8s ease, transform 0.8s ease'
       }}
     >
       {/* Timeline Node Icon */}
@@ -41,27 +47,29 @@ const TimelineLedgerItem: React.FC<{ item: EducationItem; index: number }> = ({ 
           width: '36px',
           height: '36px',
           borderRadius: '50%',
-          backgroundColor: 'rgba(200, 245, 66, 0.08)',
-          border: `0.8px solid ${isLaw ? 'rgba(200,245,66,0.45)' : 'rgba(255,255,255,0.18)'}`,
+          backgroundColor: 'var(--green-deep)',
+          border: `1px solid ${isLaw ? 'var(--lime)' : 'rgba(255, 255, 255, 0.12)'}`,
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
-          boxShadow: isLaw ? '0 0 14px rgba(200,245,66,0.2)' : 'none',
+          boxShadow: 'none',
           zIndex: 2
         }}
       >
         {isLaw ? (
           <GraduationCap size={16} color="var(--lime)" />
         ) : (
-          <Award size={16} color="rgba(255,255,255,0.7)" />
+          <Award size={16} color="var(--lime)" />
         )}
       </div>
 
       {/* Content Card */}
       <div
+        ref={cardRef}
         className="bento-card"
         style={{
-          padding: '2rem 1.75rem'
+          padding: '2rem 1.75rem',
+          transition: 'background 0.3s ease, border-color 0.3s ease, transform 0.3s cubic-bezier(0.16, 1, 0.3, 1)'
         }}
       >
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', flexWrap: 'wrap', gap: '0.75rem' }}>
@@ -69,39 +77,39 @@ const TimelineLedgerItem: React.FC<{ item: EducationItem; index: number }> = ({ 
             <span className={isLaw ? 'bento-pill bento-pill-cyan' : 'bento-pill'} style={{ marginBottom: '0.65rem' }}>
               {item.badge}
             </span>
-            <h3 style={{ fontSize: '1.35rem', fontWeight: 400, letterSpacing: '-0.03em', color: '#ffffff', marginTop: '0.2rem' }}>
+            <h3 style={{ fontSize: '1.35rem', fontWeight: 600, letterSpacing: '-0.03em', color: 'var(--text-white)', marginTop: '0.2rem' }}>
               {item.degree}
             </h3>
-            <span style={{ fontSize: '0.84rem', color: isLaw ? 'var(--lime)' : 'rgba(255,255,255,0.5)', fontWeight: 500, display: 'block', marginTop: '0.15rem' }}>
+            <span style={{ fontSize: '0.84rem', color: 'var(--lime)', fontWeight: 600, display: 'block', marginTop: '0.15rem' }}>
               {item.institution}
             </span>
           </div>
 
           <div style={{ textAlign: 'right' }}>
-            <span style={{ fontSize: '0.72rem', color: 'rgba(255,255,255,0.35)', fontWeight: 500 }}>
+            <span style={{ fontSize: '0.72rem', color: 'var(--text-card-muted)', fontWeight: 600 }}>
               {item.period}
             </span>
-            <span style={{ display: 'block', fontSize: '0.7rem', color: 'var(--lime)', marginTop: '0.15rem' }}>
+            <span style={{ display: 'block', fontSize: '0.7rem', color: 'var(--lime)', fontWeight: 600, marginTop: '0.15rem' }}>
               {item.status}
             </span>
           </div>
         </div>
 
-        <p style={{ color: 'var(--text-secondary)', fontSize: '0.92rem', lineHeight: 1.6, marginTop: '0.85rem' }}>
+        <p style={{ color: 'var(--text-card-secondary)', fontSize: '0.92rem', lineHeight: 1.6, marginTop: '0.85rem' }}>
           {item.desc}
         </p>
 
         {/* Expandable Coursework Module Breakdown */}
         {item.modules && (
-          <div style={{ marginTop: '1.1rem', paddingTop: '0.75rem', borderTop: '0.8px solid rgba(255,255,255,0.08)' }}>
+          <div style={{ marginTop: '1.1rem', paddingTop: '0.75rem', borderTop: '1px solid rgba(255, 255, 255, 0.08)' }}>
             <button
               onClick={() => setIsExpanded(!isExpanded)}
               style={{
                 background: 'transparent',
                 border: 'none',
                 color: 'var(--lime)',
-                fontSize: '0.74rem',
-                fontWeight: 500,
+                fontSize: '0.76rem',
+                fontWeight: 600,
                 display: 'flex',
                 alignItems: 'center',
                 gap: '0.35rem',
@@ -126,7 +134,7 @@ const TimelineLedgerItem: React.FC<{ item: EducationItem; index: number }> = ({ 
                       display: 'inline-flex',
                       alignItems: 'center',
                       gap: '0.35rem',
-                      color: 'rgba(255,255,255,0.7)'
+                      color: 'var(--text-card-secondary)'
                     }}
                   >
                     <CheckCircle2 size={11} color="var(--lime)" />
@@ -147,12 +155,12 @@ export const AcademicLedger: React.FC = () => {
     <section className="section-wrapper" id="education">
       <div className="container">
         {/* Section Header */}
-        <div style={{ maxWidth: '600px', marginBottom: '3rem' }}>
-          <span className="bento-pill bento-pill-cyan" style={{ marginBottom: '0.85rem', display: 'inline-flex' }}>Academic Ledger</span>
-          <h2 style={{ fontWeight: 400 }}>
+        <div className="section-header reveal">
+          <span className="bento-pill bento-pill-cyan">Academic Ledger</span>
+          <h2 style={{ fontWeight: 500, marginTop: '0.65rem', color: 'var(--text-primary)' }}>
             Scholastic Pedigree &amp; <span className="lime-text">Credentials</span>
           </h2>
-          <p style={{ marginTop: '0.75rem', color: 'rgba(255,255,255,0.5)', fontSize: '0.9rem' }}>
+          <p style={{ marginTop: '0.75rem', color: 'var(--text-secondary)', fontSize: '0.9rem' }}>
             A verified timeline of British legal studies, communication pedagogy, and inclusive social science certifications.
           </p>
         </div>
@@ -160,14 +168,16 @@ export const AcademicLedger: React.FC = () => {
         {/* Timeline Ledger Track */}
         <div style={{ position: 'relative', maxWidth: '880px', margin: '0 auto' }}>
           <div
+            className="reveal reveal-delay-1"
             style={{
               position: 'absolute',
               top: '18px',
               bottom: '18px',
               left: '17px',
-              width: '1.5px',
-              background: 'linear-gradient(to bottom, var(--lime), rgba(255,255,255,0.07))',
-              zIndex: 1
+              width: '2px',
+              background: 'linear-gradient(to bottom, #1b4332, rgba(27,67,50,0.12))',
+              zIndex: 1,
+              transition: 'opacity 0.8s ease'
             }}
           />
 

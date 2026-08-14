@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Navbar } from './components/Navbar';
 import { Hero3D } from './components/Hero3D';
 import { StatsRow } from './components/StatsRow';
@@ -10,12 +10,16 @@ import { KeynoteSpotlight } from './components/KeynoteSpotlight';
 import { HonorsSection } from './components/HonorsSection';
 import { ContactSuite } from './components/ContactSuite';
 import { ModalDossier } from './components/ModalDossier';
-import { CustomCursor } from './components/CustomCursor';
+import { BgShader } from './components/BgShader';
+import { useScrollReveal } from './utils/animations';
 import { Leaf, ArrowUp } from 'lucide-react';
 
 export const App: React.FC = () => {
   const [activeModalId, setActiveModalId] = useState<string | null>(null);
   const [toastMessage, setToastMessage] = useState<string | null>(null);
+
+  // Initialize Scroll Reveal Animations
+  useScrollReveal();
 
   const showToast = (msg: string) => {
     setToastMessage(msg);
@@ -27,7 +31,7 @@ export const App: React.FC = () => {
   return (
     /* Outer sage frame is body padding via CSS; inner is this div */
     <div className="bento-mesh-bg">
-      <CustomCursor />
+      <BgShader />
 
       <Navbar onOpenResumeModal={() => setActiveModalId('resume')} onToast={showToast} />
 
@@ -46,7 +50,7 @@ export const App: React.FC = () => {
       {/* Footer */}
       <footer
         style={{
-          borderTop: '0.8px solid rgba(255,255,255,0.08)',
+          borderTop: '1px solid rgba(27, 67, 50, 0.12)',
           padding: '2.5rem 0',
           position: 'relative',
           zIndex: 10
@@ -58,18 +62,18 @@ export const App: React.FC = () => {
               <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', marginBottom: '0.3rem' }}>
                 <div style={{
                   width: '28px', height: '28px', borderRadius: '50%',
-                  backgroundColor: 'var(--lime)',
+                  backgroundColor: '#1b4332',
                   display: 'flex', alignItems: 'center', justifyContent: 'center',
                   fontFamily: 'var(--font-heading)',
-                  fontSize: '0.72rem', fontWeight: 700, color: 'var(--green-deep)'
+                  fontSize: '0.72rem', fontWeight: 700, color: '#ffffff'
                 }}>
                   HE
                 </div>
-                <span style={{ fontFamily: 'var(--font-heading)', fontSize: '1rem', fontWeight: 500, letterSpacing: '-0.02em', color: '#ffffff' }}>
+                <span style={{ fontFamily: 'var(--font-heading)', fontSize: '1rem', fontWeight: 500, letterSpacing: '-0.02em', color: 'var(--text-primary)' }}>
                   Hannah Elangovan
                 </span>
               </div>
-              <p style={{ fontSize: '0.76rem', color: 'rgba(255,255,255,0.35)' }}>
+              <p style={{ fontSize: '0.76rem', color: 'var(--text-secondary)' }}>
                 Founder &amp; CEO, Web Mall (Pvt) Ltd • LL.B Candidate, University of London
               </p>
             </div>
@@ -82,14 +86,14 @@ export const App: React.FC = () => {
 
           <div style={{
             marginTop: '1.75rem', paddingTop: '1rem',
-            borderTop: '0.8px solid rgba(255,255,255,0.06)',
+            borderTop: '1px solid rgba(27, 67, 50, 0.08)',
             display: 'flex', justifyContent: 'space-between', alignItems: 'center',
             flexWrap: 'wrap', gap: '0.6rem',
-            fontSize: '0.72rem', color: 'rgba(255,255,255,0.25)'
+            fontSize: '0.72rem', color: 'var(--text-muted)'
           }}>
             <span>&copy; {new Date().getFullYear()} Hannah Elangovan. All Rights Reserved.</span>
             <span style={{ display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
-              <Leaf size={12} color="var(--lime)" />
+              <Leaf size={12} color="#1b4332" />
               Built with React • TypeScript • Vite • Three.js
             </span>
           </div>
@@ -104,16 +108,16 @@ export const App: React.FC = () => {
         <div style={{
           position: 'fixed', bottom: '2rem', right: '2rem', zIndex: 300,
           padding: '0.6rem 1.15rem',
-          backgroundColor: 'rgba(10, 42, 18, 0.96)',
-          border: '0.8px solid rgba(200,245,66,0.35)',
+          backgroundColor: 'rgba(247, 249, 245, 0.96)',
+          border: '0.8px solid rgba(27, 67, 50, 0.18)',
           borderRadius: '9999px',
-          boxShadow: '0 10px 30px rgba(0,0,0,0.6)',
+          boxShadow: '0 10px 30px rgba(0, 0, 0, 0.08)',
           backdropFilter: 'blur(16px)',
           display: 'flex', alignItems: 'center', gap: '0.5rem',
-          color: 'var(--lime)',
+          color: '#1b4332',
           fontSize: '0.78rem', fontWeight: 500
         }}>
-          <Leaf size={13} />
+          <Leaf size={13} color="#1b4332" />
           <span>{toastMessage}</span>
         </div>
       )}

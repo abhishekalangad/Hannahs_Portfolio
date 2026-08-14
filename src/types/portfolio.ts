@@ -20,6 +20,7 @@ export interface VentureItem {
   tags: string[];
   link?: string;
   linkText?: string;
+  domain?: string;
   metrics?: { label: string; value: string }[];
 }
 
@@ -60,4 +61,5 @@ export interface ModalDetailRecord {
   tags?: string[];
   link?: string;
   linkText?: string;
+  iframeUrl?: string;
 }
