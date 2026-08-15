@@ -115,7 +115,7 @@ export const ContactSuite: React.FC<ContactSuiteProps> = ({ onToast }) => {
             Let's Have <span className="lime-text">a Discussion Together</span>
           </h2>
           <p style={{ marginTop: '0.75rem', color: 'var(--text-secondary)', fontSize: '0.9rem' }}>
-            Open for corporate governance advisory, legal tech initiatives, keynote speaking engagements, and e-commerce collaborations.
+            Open to collaborations, speaking engagements & new opportunities.
           </p>
         </div>
 
