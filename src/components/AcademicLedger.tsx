@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { GraduationCap, CheckCircle2, Award, Pin, PinOff } from 'lucide-react';
+import { GraduationCap, CheckCircle2, Award, Pin } from 'lucide-react';
 import { educationData } from '../data/portfolioData';
 import { EducationItem } from '../types/portfolio';
 
@@ -18,8 +18,6 @@ const TimelineLedgerItem: React.FC<{
   if (isMobile) {
     return (
       <div
-        onMouseEnter={onHover}
-        onMouseLeave={onLeave}
         onClick={onClick}
         className="bento-card"
         style={{
@@ -287,11 +285,22 @@ export const AcademicLedger: React.FC = () => {
 
   useEffect(() => {
     const handleResize = () => {
-      setIsMobile(window.innerWidth < 768);
+      const mobile = window.innerWidth < 768;
+      setIsMobile(mobile);
+      if (mobile && lockedIndex === null) {
+        setLockedIndex(0); // Open first card by default on mobile on load/resize
+      }
     };
     window.addEventListener('resize', handleResize);
     handleResize();
     return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  // Make sure first card is open by default on mobile on initial load
+  useEffect(() => {
+    if (window.innerWidth < 768 && lockedIndex === null) {
+      setLockedIndex(0);
+    }
   }, []);
 
   useEffect(() => {
@@ -316,7 +325,9 @@ export const AcademicLedger: React.FC = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, [isMobile, lockedIndex]);
 
-  const activePanelIndex = hoveredIndex !== null ? hoveredIndex : (lockedIndex !== null ? lockedIndex : activeIndex);
+  const activePanelIndex = isMobile
+    ? lockedIndex
+    : (hoveredIndex !== null ? hoveredIndex : (lockedIndex !== null ? lockedIndex : activeIndex));
 
   return (
     <section ref={sectionRef} className="section-wrapper" id="education" style={{ padding: 'clamp(3rem, 6vw, 6rem) 0' }}>

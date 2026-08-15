@@ -112,7 +112,7 @@ export const ContactSuite: React.FC<ContactSuiteProps> = ({ onToast }) => {
         <div className="section-header reveal">
           <span className="bento-pill bento-pill-cyan">Get in Touch</span>
           <h2 style={{ fontWeight: 500, marginTop: '0.65rem', color: 'var(--text-primary)' }}>
-            Let's Build <span className="lime-text">Something Together</span>
+            Let's Have <span className="lime-text">a Discussion Together</span>
           </h2>
           <p style={{ marginTop: '0.75rem', color: 'var(--text-secondary)', fontSize: '0.9rem' }}>
             Open for corporate governance advisory, legal tech initiatives, keynote speaking engagements, and e-commerce collaborations.
