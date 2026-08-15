@@ -52,6 +52,11 @@
   --main-radius:    24px;
   --ease-smooth:    cubic-bezier(0.16, 1, 0.3, 1);
 
+  /* Responsive Nav Variables */
+  --nav-link-font-size: 0.8rem;
+  --nav-link-padding: 0.38rem 0.85rem;
+  --nav-link-gap: 0.2rem;
+
   /* Spacing Scale */
   --space-section: clamp(3rem, 6vw, 6rem);
   --space-card:    clamp(1.25rem, 3vw, 2.25rem);
@@ -503,20 +508,24 @@ p {
   :root {
     --main-radius: 20px;
     --frame-pad: clamp(8px, 1.5vw, 20px);
+    --nav-link-font-size: 0.72rem;
+    --nav-link-padding: 0.3rem 0.5rem;
+    --nav-link-gap: 0.1rem;
   }
 
   .custom-cursor-dot, .custom-cursor-halo { display: none !important; }
+  .navbar-brand-subtitle { display: none !important; }
 }
 
 /* ========================
    DESKTOP NAV SHOW
    ======================== */
-@media (min-width: 900px) {
+@media (min-width: 768px) {
   .desktop-nav-links { display: block !important; }
   .mobile-menu-btn   { display: none !important; }
   .desktop-only      { display: inline-flex !important; }
 }
-@media (max-width: 899px) {
+@media (max-width: 767px) {
   .desktop-only { display: none !important; }
 }
 

@@ -99,7 +99,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenResumeModal, onToast }) =>
               }}>
                 Hannah Elangovan
               </span>
-              <span style={{ fontSize: '0.64rem', color: '#1b4332', display: 'flex', alignItems: 'center', gap: '0.25rem', fontWeight: 600 }}>
+              <span className="navbar-brand-subtitle" style={{ fontSize: '0.64rem', color: '#1b4332', display: 'flex', alignItems: 'center', gap: '0.25rem', fontWeight: 600 }}>
                 <span style={{ width: '5px', height: '5px', borderRadius: '50%', backgroundColor: '#1b4332', display: 'inline-block' }} />
                 Founder & Legal Scholar
               </span>
@@ -108,7 +108,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenResumeModal, onToast }) =>
 
           {/* Desktop Nav Links */}
           <nav style={{ display: 'none' }} className="desktop-nav-links">
-            <ul style={{ display: 'flex', alignItems: 'center', gap: '0.2rem', listStyle: 'none' }}>
+            <ul style={{ display: 'flex', alignItems: 'center', gap: 'var(--nav-link-gap)', listStyle: 'none' }}>
               {navLinks.map((link) => {
                 const isActive = activeSection === link.href.replace('#', '');
                 return (
@@ -117,10 +117,10 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenResumeModal, onToast }) =>
                       href={link.href}
                       style={{
                         textDecoration: 'none',
-                        fontSize: '0.8rem',
+                        fontSize: 'var(--nav-link-font-size)',
                         fontWeight: isActive ? 600 : 500,
                         color: isActive ? '#ffffff' : '#374151',
-                        padding: '0.38rem 0.85rem',
+                        padding: 'var(--nav-link-padding)',
                         borderRadius: '9999px',
                         backgroundColor: isActive ? '#1b4332' : 'transparent',
                         transition: 'all 0.22s ease',
@@ -147,9 +147,9 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenResumeModal, onToast }) =>
                 background: 'rgba(27, 67, 50, 0.08)',
                 border: '1px solid rgba(27, 67, 50, 0.2)',
                 color: '#1b4332',
-                padding: '0.38rem 0.85rem',
+                padding: 'var(--nav-link-padding)',
                 borderRadius: '9999px',
-                fontSize: '0.74rem',
+                fontSize: 'var(--nav-link-font-size)',
                 fontWeight: 600,
                 display: 'inline-flex', alignItems: 'center', gap: '0.4rem',
                 textDecoration: 'none',

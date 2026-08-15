@@ -30,13 +30,13 @@ const MacWindowHeader: React.FC<{ domain?: string; category: string }> = ({ doma
       border: '1px solid rgba(27, 67, 50, 0.14)',
       borderRadius: '9999px',
       padding: '0.15rem 0.6rem',
-      fontSize: '0.65rem',
+      fontSize: 'clamp(0.55rem, 0.7vw, 0.65rem)',
       color: '#1b4332',
       fontFamily: 'monospace',
       fontWeight: 600
     }}>
       <Lock size={9} color="#1b4332" />
-      <span>https://{domain}</span>
+      <span>{domain}</span>
     </div>
 
     {/* Live Tag */}
@@ -66,7 +66,7 @@ const VentureCardContent: React.FC<{ venture: VentureItem; onOpenModal: (id: str
     <div
       onClick={() => onOpenModal(venture.id)}
       style={{
-        padding: '1rem 1.15rem 1.15rem',
+        padding: 'clamp(0.6rem, 1vw, 1rem) clamp(0.7rem, 1.1vw, 1.15rem) clamp(0.7rem, 1.1vw, 1.15rem)',
         display: 'flex', flexDirection: 'column', justifyContent: 'space-between',
         height: 'calc(100% - 32px)',
         cursor: 'pointer'
@@ -78,15 +78,15 @@ const VentureCardContent: React.FC<{ venture: VentureItem; onOpenModal: (id: str
           <span style={{ fontSize: '0.68rem', color: 'var(--text-card-muted)', fontWeight: 600 }}>{venture.period}</span>
         </div>
 
-        <h3 style={{ marginBottom: '0.15rem', fontWeight: 600, fontSize: '1.08rem', color: 'var(--text-white)' }}>{venture.title}</h3>
-        <span style={{ fontSize: '0.74rem', color: 'var(--lime)', fontWeight: 600, display: 'block', marginBottom: '0.35rem' }}>
+        <h3 style={{ marginBottom: '0.15rem', fontWeight: 600, fontSize: 'clamp(0.85rem, 1.1vw, 1.08rem)', color: 'var(--text-white)' }}>{venture.title}</h3>
+        <span style={{ fontSize: 'clamp(0.68rem, 0.78vw, 0.74rem)', color: 'var(--lime)', fontWeight: 600, display: 'block', marginBottom: '0.35rem' }}>
           {venture.role}
         </span>
-        <p style={{ fontSize: '0.81rem', color: 'var(--text-card-secondary)', lineHeight: 1.55 }}>
+        <p style={{ fontSize: 'clamp(0.72rem, 0.85vw, 0.81rem)', color: 'var(--text-card-secondary)', lineHeight: 1.55 }}>
           {venture.shortDesc}
         </p>
 
-        <div ref={lottieContainerRef} style={{ height: '95px', width: '100%', margin: '0.25rem 0' }} />
+        <div ref={lottieContainerRef} style={{ height: 'clamp(60px, 8vh, 95px)', width: '100%', margin: '0.25rem 0' }} />
       </div>
 
       <div>
@@ -112,13 +112,11 @@ export const HorizontalShowcase: React.FC<HorizontalShowcaseProps> = ({ onOpenMo
   const [, setIsHovered] = useState<boolean>(false);
   const [hoveredCardId, setHoveredCardId] = useState<string | null>(null);
   const [isMobile, setIsMobile] = useState(false);
-  const [isTablet, setIsTablet] = useState(false);
 
   useEffect(() => {
     const handleResize = () => {
       const width = window.innerWidth;
       setIsMobile(width < 768);
-      setIsTablet(width >= 768 && width < 1024);
     };
     window.addEventListener('resize', handleResize);
     handleResize();
@@ -170,7 +168,7 @@ export const HorizontalShowcase: React.FC<HorizontalShowcaseProps> = ({ onOpenMo
   // Effective progress is strictly driven by vertical scrolling
   const effectiveProgress = smoothRatio;
 
-  const colsCount = isTablet ? Math.min(filteredVentures.length, 2) : Math.min(filteredVentures.length, 4);
+  const colsCount = Math.min(filteredVentures.length, 4);
   const rowsCount = Math.ceil(filteredVentures.length / colsCount);
   const midCol = (colsCount - 1) / 2;
   const midRow = (rowsCount - 1) / 2;
