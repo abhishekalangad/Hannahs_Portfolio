@@ -60,15 +60,11 @@ export const App: React.FC = () => {
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '1.25rem' }}>
             <div>
               <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', marginBottom: '0.3rem' }}>
-                <div style={{
-                  width: '28px', height: '28px', borderRadius: '50%',
-                  backgroundColor: '#00002A',
-                  display: 'flex', alignItems: 'center', justifyContent: 'center',
-                  fontFamily: 'var(--font-heading)',
-                  fontSize: '0.72rem', fontWeight: 700, color: '#00002A'
-                }}>
-                  HE
-                </div>
+                <img
+                  src="/favicon.svg"
+                  alt="HE"
+                  style={{ width: '28px', height: '28px', borderRadius: '50%', flexShrink: 0 }}
+                />
                 <span style={{ fontFamily: 'var(--font-heading)', fontSize: '1rem', fontWeight: 500, letterSpacing: '-0.02em', color: 'var(--text-primary)' }}>
                   Hannah Elangovan
                 </span>
@@ -92,10 +88,7 @@ export const App: React.FC = () => {
             fontSize: '0.72rem', color: 'var(--text-muted)'
           }}>
             <span>&copy; {new Date().getFullYear()} Hannah Elangovan. All Rights Reserved.</span>
-            <span style={{ display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
-              <Leaf size={12} color="var(--lime)" />
-              Built with React • TypeScript • Vite • Three.js
-            </span>
+            
           </div>
         </div>
       </footer>
