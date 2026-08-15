@@ -1,15 +1,22 @@
 import { StatItem, VentureItem, EducationItem, SkillCategory, AchievementItem, ModalDetailRecord } from '../types/portfolio';
+import { getAge, getVentureYears } from '../utils/dateUtils';
 
 // ============================================================
 // DATA SOURCED EXCLUSIVELY FROM:
 // "HANNAH ELANGOVAN RESUME - FINAL.md"
 // ============================================================
 
+// ── Dynamic computed strings (auto-update every year) ──────────────────────
+const _ageLbl = () => getAge() + '-year-old';
+const _ventYrs = () => getVentureYears();
+const _bioStr = () =>
+  `Innovatively driven, entrepreneurial ${_ageLbl()} with ${_ventYrs()} years of experience building and scaling a successful E Commerce business, seeking to leverage proven leadership, strategic problem-solving, and negotiation skills to excel in a rigorous legal education.`;
+
 export const personalData = {
   name: "Hannah Elangovan",
   tagline: "E-Commerce Founder & Legal Scholar",
-  subheadline: "Innovatively driven, entrepreneurial 21-year-old with three years of experience building and scaling a successful E Commerce business, seeking to leverage proven leadership, strategic problem-solving, and negotiation skills to excel in a rigorous legal education.",
-  bio: "Innovatively driven, entrepreneurial 21-year-old with three years of experience building and scaling a successful E Commerce business, seeking to leverage proven leadership, strategic problem-solving, and negotiation skills to excel in a rigorous legal education.",
+  get subheadline() { return _bioStr(); },
+  get bio() { return _bioStr(); },
   email: "hannahpanthea@gmail.com",
   phone: "+94 778973708",
   linkedin: "https://linkedin.com/in/hannah-elangovan-186a54355",
@@ -33,7 +40,7 @@ export const personalData = {
 
 export const statsData: StatItem[] = [
   {
-    value: "5+",
+    get value() { return _ventYrs() + '+'; },
     label: "Years Scaling Ventures",
     description: "Founder & CEO of Web Mall (Pvt) Ltd — fashion, bags, apparel & lifestyle."
   },
@@ -75,7 +82,7 @@ export const venturesData: VentureItem[] = [
     tags: ["E-Commerce", "Fashion Accessories", "Social Commerce", "Canva", "Prompt Engineering"],
     domain: "webmall.lk",
     metrics: [
-      { label: "Active Scaling", value: "5+ Years" },
+      { label: "Active Scaling", get value() { return _ventYrs() + '+ Years'; } } as unknown as { label: string; value: string },
       { label: "Catalog", value: "Multi-Category" },
       { label: "Channel", value: "Social Commerce" }
     ]
@@ -285,7 +292,7 @@ export const modalDetailsData: Record<string, ModalDetailRecord> = {
     period: "2021 — Present",
     narrative: [
       "Hannah Elangovan is the Founder and CEO of Web Mall Private Limited — an E-Commerce business dealing in fashion accessories, bags, apparel, ornaments, and more.",
-      "With five years of active scaling, Hannah has managed all aspects of the business: product sourcing, digital marketing across social platforms, customer relations, and operational management.",
+      `With ${_ventYrs()} years of active scaling, Hannah has managed all aspects of the business: product sourcing, digital marketing across social platforms, customer relations, and operational management.`,
       "She deploys Canva for visual brand assets and leverages Prompt Engineering for efficient content creation and automation."
     ],
     highlights: [
@@ -293,7 +300,7 @@ export const modalDetailsData: Record<string, ModalDetailRecord> = {
       "Multi-category e-commerce: fashion accessories, bags, apparel, ornaments & lifestyle.",
       "Proficient in social media platforms for product promotion, marketing and sales.",
       "Utilises Canva for creative content and Prompt Engineering for automation.",
-      "5+ years of continuous operational scaling."
+      `${_ventYrs()}+ years of continuous operational scaling.`
     ],
     link: "https://web-mall-sand.vercel.app",
     linkText: "Visit Web Mall Website",
@@ -373,11 +380,11 @@ export const modalDetailsData: Record<string, ModalDetailRecord> = {
     subtitle: "E-Commerce Founder & Legal Scholar",
     period: "July 2024 — Present",
     narrative: [
-      "Innovatively driven, entrepreneurial 21-year-old with three years of experience building and scaling a successful E Commerce business, seeking to leverage proven leadership, strategic problem-solving, and negotiation skills to excel in a rigorous legal education.",
+      _bioStr(),
       "Currently pursuing a Bachelor of Laws (LL.B) at the University of London, bringing together practical enterprise execution, speech pedagogy, special needs education, and international keynote experience."
     ],
     highlights: [
-      "Objective: Entrepreneurial 21-year-old leveraging proven leadership & strategic problem solving in legal education.",
+      `Objective: Entrepreneurial ${_ageLbl()} leveraging proven leadership & strategic problem solving in legal education.`,
       "Current Education: Bachelor of Laws (LL.B) — University of London (July 2024 – Present).",
       "Education Credentials: Dip.LCM (TD) Drama & Communication Teaching (Univ of West London, 2023), Diploma in Special Needs Education (2023), Cambridge O/Level (Lyceum, 2021).",
       "Keynote Project: ANTHA PRERNA 2025 International Resource Person at Kochi Business School, Kerala, India.",

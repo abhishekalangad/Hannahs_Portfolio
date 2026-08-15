@@ -38,7 +38,7 @@ export const KeynoteSpotlight: React.FC<KeynoteSpotlightProps> = ({ onOpenModal 
           ref={cardRef}
           className="bento-card reveal"
           style={{
-            background: 'radial-gradient(ellipse at 85% 20%, rgba(200, 245, 66, 0.08) 0%, var(--card-bg) 70%)',
+            background: 'radial-gradient(ellipse at 85% 20%, rgba(78, 164, 204, 0.15) 0%, var(--card-bg) 70%)',
             padding: 'clamp(2.25rem, 4.5vw, 3.5rem)',
             position: 'relative',
             border: '1px solid rgba(255, 255, 255, 0.08)',

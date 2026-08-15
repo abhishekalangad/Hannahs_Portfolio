@@ -34,11 +34,11 @@ const AnimatedProgressBar: React.FC<{ level: number; delay: number }> = ({ level
         style={{
           height: '100%',
           width: width + '%',
-          backgroundImage: 'linear-gradient(to right, rgba(200, 245, 66, 0.5), var(--lime))',
+          backgroundImage: 'linear-gradient(to right, rgba(78, 164, 204, 0.50), var(--lime))',
           borderRadius: '9999px',
           transition: 'width 1.5s cubic-bezier(0.16, 1, 0.3, 1)',
           position: 'relative',
-          boxShadow: '0 0 8px rgba(200, 245, 66, 0.3)'
+          boxShadow: '0 0 8px rgba(78, 164, 204, 0.30)'
         }}
       >
         {width > 0 && (
@@ -103,7 +103,7 @@ export const SkillsMatrix: React.FC = () => {
         .language-hover-card:hover {
           transform: translateY(-2px);
           background-color: rgba(255, 255, 255, 0.05) !important;
-          border-color: rgba(200, 245, 66, 0.25) !important;
+          border-color: rgba(78, 164, 204, 0.35) !important;
           box-shadow: 0 5px 15px rgba(0,0,0,0.1);
         }
         .skills-tag-pill {
@@ -154,7 +154,7 @@ export const SkillsMatrix: React.FC = () => {
             }}
           >
             <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '1.75rem' }}>
-              <div className="icon-lime-bg" style={{ width: '38px', height: '38px', backgroundColor: 'rgba(200,245,66,0.12)' }}>
+              <div className="icon-lime-bg" style={{ width: '38px', height: '38px', backgroundColor: 'rgba(78, 164, 204, 0.15)' }}>
                 <Scale size={17} color="var(--lime)" />
               </div>
               <div>
@@ -190,7 +190,7 @@ export const SkillsMatrix: React.FC = () => {
             }}
           >
             <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '1.75rem' }}>
-              <div className="icon-lime-bg" style={{ width: '38px', height: '38px', backgroundColor: 'rgba(200,245,66,0.12)' }}>
+              <div className="icon-lime-bg" style={{ width: '38px', height: '38px', backgroundColor: 'rgba(78, 164, 204, 0.15)' }}>
                 <TrendingUp size={17} color="var(--lime)" />
               </div>
               <div>
@@ -228,7 +228,7 @@ export const SkillsMatrix: React.FC = () => {
             {/* Header with Oratory equalizer waves */}
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '1.5rem' }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
-                <div className="icon-lime-bg" style={{ width: '38px', height: '38px', backgroundColor: 'rgba(200,245,66,0.12)' }}>
+                <div className="icon-lime-bg" style={{ width: '38px', height: '38px', backgroundColor: 'rgba(78, 164, 204, 0.15)' }}>
                   <Languages size={17} color="var(--lime)" />
                 </div>
                 <div>
@@ -297,7 +297,7 @@ export const SkillsMatrix: React.FC = () => {
             }}
           >
             <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '1.5rem' }}>
-              <div className="icon-lime-bg" style={{ width: '38px', height: '38px', backgroundColor: 'rgba(200,245,66,0.12)' }}>
+              <div className="icon-lime-bg" style={{ width: '38px', height: '38px', backgroundColor: 'rgba(78, 164, 204, 0.15)' }}>
                 <Award size={17} color="var(--lime)" />
               </div>
               <div>

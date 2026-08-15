@@ -62,20 +62,21 @@ export const BgShader: React.FC = () => {
         float finalNoise = (n1 + n2) * 0.5;
 
         // Custom light off-white and soft sage colors
-        vec3 creamBg   = vec3(0.968, 0.976, 0.961); // #f7f9f5
-        vec3 softSage  = vec3(0.910, 0.933, 0.898); // #e8ece5
-        vec3 sageGlow  = vec3(0.105, 0.262, 0.196); // #1b4332 emerald glow
+        vec3 iceWhite   = vec3(0.949, 0.969, 0.988); // #00002A
+        vec3 powderBlue = vec3(0.816, 0.886, 0.941); // #04091A
+        vec3 navyRipple = vec3(0.102, 0.247, 0.459); // #1A3F75 slate
+        vec3 skyGlow    = vec3(0.220, 0.741, 0.973); // #4EA4CC ice cyan
 
         // Base gradient
-        vec3 base = mix(creamBg, softSage, uv.y);
+        vec3 base = mix(iceWhite, powderBlue, uv.y * 0.7);
 
         // Add soft moving aurora bands
         float wave = sin(uv.x * 2.5 + u_time * 0.15) * 0.5 + 0.5;
         float band = 1.0 - abs(uv.y - (0.4 + wave * 0.25));
-        band = pow(band, 8.0) * 0.04;
+        band = pow(max(band, 0.0), 6.0) * 0.12;
 
         // Combine noise and bands
-        vec3 glow = sageGlow * (finalNoise * 0.03 + band);
+        vec3 glow = navyRipple * (finalNoise * 0.03) + skyGlow * band;
         
         // Final pixel color blend
         vec3 color = base + glow;
@@ -210,7 +211,7 @@ export const BgShader: React.FC = () => {
         style={{
           position: 'absolute',
           inset: 0,
-          backgroundImage: 'repeating-linear-gradient(45deg, rgba(27, 67, 50, 0.03) 0px, rgba(27, 67, 50, 0.03) 1px, transparent 1px, transparent 10px)',
+          backgroundImage: 'repeating-linear-gradient(45deg, rgba(26, 63, 117, 0.03) 0px, rgba(78, 164, 204, 0.025) 1px, transparent 1px, transparent 10px)',
           backgroundSize: '14px 14px',
           opacity: 0.85,
           pointerEvents: 'none',

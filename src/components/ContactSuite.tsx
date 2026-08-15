@@ -41,7 +41,7 @@ export const ContactSuite: React.FC<ContactSuiteProps> = ({ onToast }) => {
           particleCount: 55,
           spread: 70,
           origin: { y: 0.8 },
-          colors: ['#1b4332', '#2d6a4f', '#74c69d', '#e5eae1', '#ffffff']
+          colors: ['#4EA4CC', '#1A3F75', '#4E6A9C', '#D4E4F0', '#ffffff']
         });
         setSubmitStatus('success');
         onToast('Message sent successfully!');
@@ -71,7 +71,7 @@ export const ContactSuite: React.FC<ContactSuiteProps> = ({ onToast }) => {
   const inputStyle: React.CSSProperties = {
     width: '100%',
     background: 'rgba(255, 255, 255, 0.03)',
-    border: '1px solid rgba(255, 255, 255, 0.08)',
+    border: '1px solid rgba(78, 106, 156, 0.25)',
     borderRadius: '10px',
     padding: '0.65rem 0.85rem',
     fontFamily: 'var(--font-body)',
@@ -212,8 +212,8 @@ export const ContactSuite: React.FC<ContactSuiteProps> = ({ onToast }) => {
                 padding: '2rem',
                 textAlign: 'center',
                 borderRadius: '12px',
-                backgroundColor: 'rgba(200, 245, 66, 0.05)',
-                border: '1px solid rgba(200, 245, 66, 0.2)'
+                backgroundColor: 'rgba(26, 63, 117, 0.08)',
+                border: '1px solid rgba(26, 63, 117, 0.25)'
               }}>
                 <CheckCircle size={36} color="var(--lime)" style={{ margin: '0 auto 0.85rem' }} />
                 <p style={{ color: 'var(--lime)', fontWeight: 600, fontSize: '0.92rem' }}>

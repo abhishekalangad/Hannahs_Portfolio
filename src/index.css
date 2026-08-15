@@ -8,28 +8,28 @@
 
 :root {
   /* Canvas Backgrounds (Light Theme) */
-  --frame-bg:       #e2e8df; /* Light Sage Frame Border */
-  --bg-cream:       #f7f9f5; /* Light Cream Canvas background */
+  --frame-bg:       #D0E2F0; /* Light Sage Frame Border */
+  --bg-cream:       #F2F7FC; /* Light Cream Canvas background */
 
   /* Card backgrounds (Solid Dark Forest Green) */
-  --green-deep:     #08170e;
-  --green-mid:      #0c2517;
-  --green-light:    #10301d;
-  --green-card:     #0d3617; /* Classic solid dark forest green (#0d3617) */
-  --green-card-h:   #12401e; /* Card hover background */
+  --green-deep:     #00001A;
+  --green-mid:      #041230;
+  --green-light:    #071840;
+  --green-card:     #0A2246; /* Classic solid dark forest green (#00002A) */
+  --green-card-h:   #13315C; /* Card hover background */
 
-  --lime:           #c8f542; /* Vibrant accent lime/mint green for dark cards */
-  --lime-hover:     #d4f76a;
-  --lime-dim:       rgba(200, 245, 66, 0.15);
-  --lime-glow:      rgba(200, 245, 66, 0.35);
+  --lime:           #38BDF8; /* Vibrant accent lime/mint green for dark cards */
+  --lime-hover:     #60A5FA;
+  --lime-dim:       rgba(56, 189, 248, 0.15);
+  --lime-glow:      rgba(56, 189, 248, 0.35);
 
   --frame-pad:      clamp(6px, 2vw, 40px);
 
   /* Page Canvas Typography (Dark text on light background) */
   --text-white:     #ffffff; /* White text for inside cards */
-  --text-primary:   #111827; /* Dark charcoal */
-  --text-secondary: #374151; /* Dark gray */
-  --text-muted:     #6b7280; /* Muted gray */
+  --text-primary:   #00002A; /* Dark charcoal */
+  --text-secondary: #1A3F75; /* Dark gray */
+  --text-muted:     #4E6A9C; /* Muted gray */
 
   /* Card Typography (Light text on dark green cards) */
   --text-card-primary:   rgba(255, 255, 255, 0.95);
@@ -37,10 +37,10 @@
   --text-card-muted:     rgba(255, 255, 255, 0.42);
 
   /* Bento Card Styles */
-  --card-bg:        #0d3617;
-  --card-bg-h:      #12401e;
-  --card-border:    rgba(255, 255, 255, 0.08);
-  --card-border-h:  rgba(255, 255, 255, 0.18);
+  --card-bg:        #0A2246;
+  --card-bg-h:      #13315C;
+  --card-border:    rgba(255, 255, 255, 0.12);
+  --card-border-h:  rgba(56, 189, 248, 0.45);
   --card-shadow:    rgba(0, 0, 0, 0.12) 0px 16px 36px -12px;
   --card-radius:    16px;
 
@@ -97,7 +97,7 @@ body {
    SELECTION
    ======================== */
 ::selection {
-  background: #1b4332;
+  background: #00002A;
   color: #ffffff;
 }
 
@@ -106,8 +106,8 @@ body {
    ======================== */
 ::-webkit-scrollbar { width: 6px; height: 6px; }
 ::-webkit-scrollbar-track { background: #e8ece5; }
-::-webkit-scrollbar-thumb { background: rgba(27,67,50,0.18); border-radius: 4px; }
-::-webkit-scrollbar-thumb:hover { background: #1b4332; }
+::-webkit-scrollbar-thumb { background: rgba(26, 63, 117, 0.22); border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: #1A3F75; }
 
 /* ========================
    TYPOGRAPHY
@@ -146,9 +146,9 @@ p {
 /* ========================
    COLORS & TEXT ACCENTS
    ======================== */
-.lime-text           { color: #1b4332; font-weight: 600; }
-.gradient-text-cyan  { color: #1b4332; font-weight: 600; }
-.gradient-text-blue  { color: #1b4332; font-weight: 600; }
+.lime-text           { color: #00002A; font-weight: 600; }
+.gradient-text-cyan  { color: #00002A; font-weight: 600; }
+.gradient-text-blue  { color: #00002A; font-weight: 600; }
 
 /* In-Card Accents override */
 .bento-card .lime-text           { color: var(--lime); }
@@ -159,7 +159,7 @@ p {
    OUTER FRAME + CANVAS
    ======================== */
 .bento-mesh-bg {
-  background: #f7f9f5;
+  background: #F2F7FC;
   border-radius: var(--main-radius);
   overflow: hidden;
   min-height: calc(100vh - 2 * var(--frame-pad));
@@ -283,7 +283,7 @@ p {
   text-decoration: none;
   border-radius: 9999px;
   background: #ffffff;
-  color: #1b4332;
+  color: #00002A;
   border: 1px solid rgba(27, 67, 50, 0.22);
   cursor: pointer;
   transition: all 0.25s var(--ease-smooth);
@@ -327,27 +327,27 @@ p {
   letter-spacing: 0.01em;
   background: rgba(27, 67, 50, 0.06);
   border: 1px solid rgba(27, 67, 50, 0.16);
-  color: #1b4332;
+  color: #00002A;
   white-space: nowrap;
 }
 
 .bento-pill-cyan {
   background: rgba(27, 67, 50, 0.10);
   border-color: rgba(27, 67, 50, 0.25);
-  color: #1b4332;
+  color: #00002A;
 }
 
 .bento-pill-mint {
-  background: rgba(27, 67, 50, 0.08);
+  background: rgba(26, 63, 117, 0.04);
   border-color: rgba(27, 67, 50, 0.2);
-  color: #1b4332;
+  color: #00002A;
 }
 
 .icon-lime-bg {
   background: rgba(27, 67, 50, 0.1);
   border: 1px solid rgba(27, 67, 50, 0.2);
   border-radius: 10px;
-  color: #1b4332;
+  color: #00002A;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -385,7 +385,7 @@ p {
 }
 
 .bento-card .icon-lime-bg {
-  background: rgba(200, 245, 66, 0.14);
+  background: rgba(56, 189, 248, 0.14);
   border: 1px solid rgba(200, 245, 66, 0.25);
   color: var(--lime);
 }
@@ -416,7 +416,7 @@ p {
   position: fixed;
   top: 0; left: 0;
   width: 6px; height: 6px;
-  background: #1b4332;
+  background: #00002A;
   border-radius: 50%;
   pointer-events: none;
   z-index: 9999;
@@ -436,8 +436,8 @@ p {
   transition: transform 0.14s var(--ease-smooth), width 0.22s ease, height 0.22s ease;
 }
 
-.custom-cursor-dot.hovering  { width: 10px; height: 10px; background: #1b4332; }
-.custom-cursor-halo.hovering { width: 46px; height: 46px; border-color: #1b4332; background: rgba(27, 67, 50, 0.08); }
+.custom-cursor-dot.hovering  { width: 10px; height: 10px; background: #00002A; }
+.custom-cursor-halo.hovering { width: 46px; height: 46px; border-color: #00002A; background: rgba(26, 63, 117, 0.04); }
 
 /* ========================
    HORIZONTAL SCROLL — touch

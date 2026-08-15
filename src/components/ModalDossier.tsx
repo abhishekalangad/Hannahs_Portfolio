@@ -162,7 +162,7 @@ export const ModalDossier: React.FC<ModalDossierProps> = ({ modalId, onClose, on
         style={{
           position: 'relative',
           width: '100%', maxWidth: '740px', maxHeight: '88vh', overflowY: 'auto',
-          backgroundColor: '#0d3617',
+          backgroundColor: '#0A1C38',
           border: '1px solid rgba(255, 255, 255, 0.08)',
           borderRadius: '20px',
           padding: 'clamp(2rem, 4vw, 2.75rem)',
@@ -228,8 +228,8 @@ export const ModalDossier: React.FC<ModalDossierProps> = ({ modalId, onClose, on
                 style={{
                   display: 'flex', alignItems: 'flex-start', gap: '0.6rem',
                   padding: '0.7rem 0.9rem', borderRadius: '10px',
-                  backgroundColor: 'rgba(200, 245, 66, 0.04)',
-                  border: '0.8px solid rgba(200, 245, 66, 0.12)'
+                  backgroundColor: 'rgba(78, 164, 204, 0.08)',
+                  border: '0.8px solid rgba(78, 164, 204, 0.22)'
                 }}
               >
                 <CheckCircle2 size={14} color="var(--lime)" style={{ flexShrink: 0, marginTop: '2px' }} />

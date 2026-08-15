@@ -12,8 +12,8 @@ const MacWindowHeader: React.FC<{ domain?: string; category: string }> = ({ doma
   <div style={{
     display: 'flex', alignItems: 'center', justifyContent: 'space-between',
     padding: '0.45rem 0.75rem',
-    backgroundColor: '#f0f4ee',
-    borderBottom: '1px solid rgba(27, 67, 50, 0.12)',
+    backgroundColor: '#EAF2F8',
+    borderBottom: '1px solid rgba(26, 63, 117, 0.18)',
     borderTopLeftRadius: '14px', borderTopRightRadius: '14px'
   }}>
     {/* Window dots */}
@@ -27,21 +27,21 @@ const MacWindowHeader: React.FC<{ domain?: string; category: string }> = ({ doma
     <div style={{
       display: 'flex', alignItems: 'center', gap: '0.35rem',
       backgroundColor: '#ffffff',
-      border: '1px solid rgba(27, 67, 50, 0.14)',
+      border: '1px solid rgba(26, 63, 117, 0.2)',
       borderRadius: '9999px',
       padding: '0.15rem 0.6rem',
       fontSize: 'clamp(0.55rem, 0.7vw, 0.65rem)',
-      color: '#1b4332',
+      color: 'var(--lime)',
       fontFamily: 'monospace',
       fontWeight: 600
     }}>
-      <Lock size={9} color="#1b4332" />
+      <Lock size={9} color="var(--lime)" />
       <span>{domain}</span>
     </div>
 
     {/* Live Tag */}
-    <div style={{ display: 'flex', alignItems: 'center', gap: '0.25rem', fontSize: '0.6rem', color: '#1b4332', fontWeight: 700 }}>
-      <span style={{ width: '5px', height: '5px', borderRadius: '50%', backgroundColor: '#1b4332' }} />
+    <div style={{ display: 'flex', alignItems: 'center', gap: '0.25rem', fontSize: '0.6rem', color: 'var(--lime)', fontWeight: 700 }}>
+      <span style={{ width: '5px', height: '5px', borderRadius: '50%', backgroundColor: 'var(--lime)' }} />
       <span>LIVE</span>
     </div>
   </div>
@@ -211,9 +211,9 @@ export const HorizontalShowcase: React.FC<HorizontalShowcaseProps> = ({ onOpenMo
                   style={{
                     padding: '0.28rem 0.8rem', borderRadius: '9999px',
                     fontSize: '0.72rem', fontWeight: activeCategory === cat ? 600 : 500,
-                    border: `1px solid ${activeCategory === cat ? '#1b4332' : 'rgba(27,67,50,0.16)'}`,
-                    backgroundColor: activeCategory === cat ? '#1b4332' : '#ffffff',
-                    color: activeCategory === cat ? '#ffffff' : '#1b4332',
+                    border: `1px solid ${activeCategory === cat ? 'var(--lime)' : 'rgba(27,67,50,0.16)'}`,
+                    backgroundColor: activeCategory === cat ? 'var(--lime)' : '#ffffff',
+                    color: activeCategory === cat ? '#ffffff' : 'var(--lime)',
                     cursor: 'pointer', transition: 'all 0.22s ease'
                   }}
                 >

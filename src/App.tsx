@@ -50,7 +50,7 @@ export const App: React.FC = () => {
       {/* Footer */}
       <footer
         style={{
-          borderTop: '1px solid rgba(27, 67, 50, 0.12)',
+          borderTop: '1px solid rgba(26, 63, 117, 0.15)',
           padding: '2.5rem 0',
           position: 'relative',
           zIndex: 10
@@ -62,10 +62,10 @@ export const App: React.FC = () => {
               <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', marginBottom: '0.3rem' }}>
                 <div style={{
                   width: '28px', height: '28px', borderRadius: '50%',
-                  backgroundColor: '#1b4332',
+                  backgroundColor: '#00002A',
                   display: 'flex', alignItems: 'center', justifyContent: 'center',
                   fontFamily: 'var(--font-heading)',
-                  fontSize: '0.72rem', fontWeight: 700, color: '#ffffff'
+                  fontSize: '0.72rem', fontWeight: 700, color: '#00002A'
                 }}>
                   HE
                 </div>
@@ -86,14 +86,14 @@ export const App: React.FC = () => {
 
           <div style={{
             marginTop: '1.75rem', paddingTop: '1rem',
-            borderTop: '1px solid rgba(27, 67, 50, 0.08)',
+            borderTop: '1px solid rgba(26, 63, 117, 0.10)',
             display: 'flex', justifyContent: 'space-between', alignItems: 'center',
             flexWrap: 'wrap', gap: '0.6rem',
             fontSize: '0.72rem', color: 'var(--text-muted)'
           }}>
             <span>&copy; {new Date().getFullYear()} Hannah Elangovan. All Rights Reserved.</span>
             <span style={{ display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
-              <Leaf size={12} color="#1b4332" />
+              <Leaf size={12} color="var(--lime)" />
               Built with React • TypeScript • Vite • Three.js
             </span>
           </div>
@@ -108,16 +108,16 @@ export const App: React.FC = () => {
         <div style={{
           position: 'fixed', bottom: '2rem', right: '2rem', zIndex: 300,
           padding: '0.6rem 1.15rem',
-          backgroundColor: 'rgba(247, 249, 245, 0.96)',
-          border: '0.8px solid rgba(27, 67, 50, 0.18)',
+          backgroundColor: 'rgba(255, 255, 255, 0.96)',
+          border: '0.8px solid rgba(26, 63, 117, 0.22)',
           borderRadius: '9999px',
           boxShadow: '0 10px 30px rgba(0, 0, 0, 0.08)',
           backdropFilter: 'blur(16px)',
           display: 'flex', alignItems: 'center', gap: '0.5rem',
-          color: '#1b4332',
+          color: '#ffffff',
           fontSize: '0.78rem', fontWeight: 500
         }}>
-          <Leaf size={13} color="#1b4332" />
+          <Leaf size={13} color="var(--lime)" />
           <span>{toastMessage}</span>
         </div>
       )}

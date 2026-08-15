@@ -60,11 +60,11 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenResumeModal, onToast }) =>
             width: '100%',
             maxWidth: '1060px',
             backgroundColor: isScrolled
-              ? 'rgba(255, 255, 255, 0.96)'
+              ? 'rgba(255, 255, 255, 0.95)'
               : 'rgba(255, 255, 255, 0.88)',
             backdropFilter: 'blur(20px)',
             WebkitBackdropFilter: 'blur(20px)',
-            border: '1px solid rgba(27, 67, 50, 0.14)',
+            border: '1px solid rgba(26, 63, 117, 0.18)',
             borderRadius: '9999px',
             padding: '0.55rem 0.85rem 0.55rem 1.1rem',
             display: 'flex',
@@ -81,7 +81,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenResumeModal, onToast }) =>
               style={{
                 width: '32px', height: '32px',
                 borderRadius: '50%',
-                backgroundColor: '#1b4332',
+                backgroundColor: '#00002A',
                 display: 'flex', alignItems: 'center', justifyContent: 'center',
                 fontFamily: 'var(--font-heading)',
                 fontWeight: 700, fontSize: '0.8rem',
@@ -95,12 +95,12 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenResumeModal, onToast }) =>
               <span style={{
                 fontFamily: 'var(--font-heading)', fontSize: '0.9rem',
                 fontWeight: 600, letterSpacing: '-0.02em',
-                color: '#111827', display: 'block', lineHeight: 1.1
+                color: '#00002A', display: 'block', lineHeight: 1.1
               }}>
                 Hannah Elangovan
               </span>
-              <span className="navbar-brand-subtitle" style={{ fontSize: '0.64rem', color: '#1b4332', display: 'flex', alignItems: 'center', gap: '0.25rem', fontWeight: 600 }}>
-                <span style={{ width: '5px', height: '5px', borderRadius: '50%', backgroundColor: '#1b4332', display: 'inline-block' }} />
+              <span className="navbar-brand-subtitle" style={{ fontSize: '0.64rem', color: '#1A3F75', display: 'flex', alignItems: 'center', gap: '0.25rem', fontWeight: 600 }}>
+                <span style={{ width: '5px', height: '5px', borderRadius: '50%', backgroundColor: '#1A3F75', display: 'inline-block' }} />
                 Founder & Legal Scholar
               </span>
             </div>
@@ -119,10 +119,10 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenResumeModal, onToast }) =>
                         textDecoration: 'none',
                         fontSize: 'var(--nav-link-font-size)',
                         fontWeight: isActive ? 600 : 500,
-                        color: isActive ? '#ffffff' : '#374151',
+                        color: isActive ? '#ffffff' : '#1A3F75',
                         padding: 'var(--nav-link-padding)',
                         borderRadius: '9999px',
-                        backgroundColor: isActive ? '#1b4332' : 'transparent',
+                        backgroundColor: isActive ? '#00002A' : 'transparent',
                         transition: 'all 0.22s ease',
                         display: 'block',
                         letterSpacing: '-0.01em'
@@ -144,9 +144,9 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenResumeModal, onToast }) =>
               download="Hannah_Elangovan_Resume.pdf"
               onClick={() => onToast('Downloading Hannah Elangovan Resume PDF...')}
               style={{
-                background: 'rgba(27, 67, 50, 0.08)',
-                border: '1px solid rgba(27, 67, 50, 0.2)',
-                color: '#1b4332',
+                background: 'rgba(26, 63, 117, 0.08)',
+                border: '1px solid rgba(26, 63, 117, 0.22)',
+                color: '#00002A',
                 padding: 'var(--nav-link-padding)',
                 borderRadius: '9999px',
                 fontSize: 'var(--nav-link-font-size)',
@@ -168,8 +168,8 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenResumeModal, onToast }) =>
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               className="mobile-menu-btn"
               style={{
-                background: 'rgba(27, 67, 50, 0.08)',
-                border: '1px solid rgba(27, 67, 50, 0.16)',
+                background: 'rgba(26, 63, 117, 0.08)',
+                border: '1px solid rgba(26, 63, 117, 0.20)',
                 borderRadius: '9999px',
                 color: '#111827', cursor: 'pointer',
                 display: 'flex', alignItems: 'center', justifyContent: 'center',
@@ -189,7 +189,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenResumeModal, onToast }) =>
         <div
           style={{
             position: 'fixed', inset: 0, zIndex: 99,
-            backgroundColor: 'rgba(247, 249, 245, 0.98)',
+            backgroundColor: 'rgba(242, 247, 252, 0.98)',
             backdropFilter: 'blur(16px)',
             display: 'flex', flexDirection: 'column',
             justifyContent: 'center', alignItems: 'center',
@@ -225,7 +225,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenResumeModal, onToast }) =>
                 width: '100%', padding: '0.75rem', borderRadius: '9999px',
                 backgroundColor: 'rgba(27, 67, 50, 0.08)',
                 border: '1px solid rgba(27, 67, 50, 0.2)',
-                color: '#1b4332', fontSize: '0.86rem', fontWeight: 600,
+                color: '#ffffff', fontSize: '0.86rem', fontWeight: 600,
                 display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.5rem',
                 textDecoration: 'none'
               }}
