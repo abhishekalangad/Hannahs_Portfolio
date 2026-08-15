@@ -565,3 +565,53 @@ p {
   position: relative;
   z-index: 2;
 }
+
+/* ==========================================================================
+   EXTRA RESPONSIVE OPTIMIZATIONS FOR ALL SCREEN SIZES
+   ========================================================================== */
+
+/* Ultra-wide Displays (>= 1600px) */
+@media (min-width: 1600px) {
+  :root {
+    --container-width: 1440px;
+  }
+}
+
+/* Small Mobile Devices (<= 380px) */
+@media (max-width: 380px) {
+  :root {
+    --frame-pad: 4px;
+    --card-radius: 12px;
+  }
+  body { padding: 4px; }
+  .bento-card {
+    padding: 1.1rem 0.85rem !important;
+  }
+  .btn-primary, .btn-secondary {
+    padding: 0.55rem 0.85rem !important;
+    font-size: 0.76rem !important;
+  }
+  .bento-pill {
+    font-size: 0.6rem !important;
+    padding: 0.2rem 0.5rem !important;
+  }
+}
+
+/* Mobile & Tablet Modal Optimizations */
+@media (max-width: 768px) {
+  .modal-overlay {
+    padding: 0.5rem !important;
+  }
+  .modal-overlay .bento-card {
+    max-height: 94vh !important;
+    padding: 1.25rem 1rem !important;
+    border-radius: 14px !important;
+  }
+}
+
+/* Touch Device Touch-Target Enhancements */
+@media (hover: none) and (pointer: coarse) {
+  a, button, [role="button"] {
+    min-height: 38px;
+  }
+}
