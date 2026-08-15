@@ -62,4 +62,5 @@ export interface ModalDetailRecord {
   link?: string;
   linkText?: string;
   iframeUrl?: string;
+  instagramLinks?: string[];
 }

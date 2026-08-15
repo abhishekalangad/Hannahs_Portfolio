@@ -47,10 +47,10 @@ export const Hero3D: React.FC = () => {
 
           {/* Headline */}
           <h1 className="reveal reveal-delay-2" style={{ maxWidth: '820px', fontWeight: 500, marginBottom: 'clamp(1rem, 2.5vw, 1.5rem)', color: 'var(--text-white)' }}>
-            Building Scalable{' '}
+            Pioneering High-Growth{' '}
             <span className="lime-text">Commerce</span>
-            {' '}&amp; Mastering{' '}
-            <span className="lime-text">Corporate Law.</span>
+            {' '}&amp; Deciphering{' '}
+            <span className="lime-text">Legal Frameworks.</span>
           </h1>
 
           {/* Bio */}

@@ -163,7 +163,7 @@ export const educationData: EducationItem[] = [
       "Pursuing the LL.B as an External Programmes candidate of the University of London.",
       "Bridging jurisprudential analysis with entrepreneurial and commercial contexts."
     ],
-    modules: ["Contract Law", "Commercial Law", "Public Law", "Legal Systems & Method", "Corporate Governance", "Intellectual Property"]
+    modules: ["Contract Law", "Commercial Law", "Public Law", "Legal Systems & Method"]
   },
   {
     id: "lcme-drama",
@@ -205,7 +205,7 @@ export const educationData: EducationItem[] = [
     details: [
       "Active participant in debate, drama, and extra-curricular academic activities."
     ],
-    modules: ["English Literature", "Business Mathematics", "Humanities & Sciences"]
+    modules: ["English Language", "Mathematics", "Physics"]
   }
 ];
 
@@ -297,7 +297,11 @@ export const modalDetailsData: Record<string, ModalDetailRecord> = {
     ],
     link: "https://web-mall-sand.vercel.app",
     linkText: "Visit Web Mall Website",
-    iframeUrl: "https://web-mall-sand.vercel.app"
+    iframeUrl: "https://web-mall-sand.vercel.app",
+    instagramLinks: [
+      "https://www.instagram.com/webmalll.lk",
+      "https://www.instagram.com/webmall.official"
+    ]
   },
   "antha-prerna": {
     title: "ANTHA PRERNA 2025 — Keynote Dossier",
@@ -383,7 +387,7 @@ export const modalDetailsData: Record<string, ModalDetailRecord> = {
       "Honors: All-Island Winner at British Performing Arts Festivals, Inter-House Drama Winner.",
       "Professional References: Mr. Abhishek K (Full Stack Developer, Assimilate Tech) & Dr. Sanjaya Gunasekara (Medical Officer, Base Hospital Bibila)."
     ],
-    link: "/Hannah_Elangovan_Resume.pdf",
+    link: "/resume.pdf",
     linkText: "Download PDF Resume"
   }
 };

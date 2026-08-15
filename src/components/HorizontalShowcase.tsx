@@ -112,10 +112,13 @@ export const HorizontalShowcase: React.FC<HorizontalShowcaseProps> = ({ onOpenMo
   const [, setIsHovered] = useState<boolean>(false);
   const [hoveredCardId, setHoveredCardId] = useState<string | null>(null);
   const [isMobile, setIsMobile] = useState(false);
+  const [isTablet, setIsTablet] = useState(false);
 
   useEffect(() => {
     const handleResize = () => {
-      setIsMobile(window.innerWidth < 1024);
+      const width = window.innerWidth;
+      setIsMobile(width < 768);
+      setIsTablet(width >= 768 && width < 1024);
     };
     window.addEventListener('resize', handleResize);
     handleResize();
@@ -167,8 +170,10 @@ export const HorizontalShowcase: React.FC<HorizontalShowcaseProps> = ({ onOpenMo
   // Effective progress is strictly driven by vertical scrolling
   const effectiveProgress = smoothRatio;
 
-  const colsCount = Math.min(filteredVentures.length, 4);
+  const colsCount = isTablet ? Math.min(filteredVentures.length, 2) : Math.min(filteredVentures.length, 4);
+  const rowsCount = Math.ceil(filteredVentures.length / colsCount);
   const midCol = (colsCount - 1) / 2;
+  const midRow = (rowsCount - 1) / 2;
 
   return (
     <section
@@ -292,28 +297,32 @@ export const HorizontalShowcase: React.FC<HorizontalShowcaseProps> = ({ onOpenMo
             >
               {filteredVentures.map((venture, index) => {
                 const col = index % colsCount;
+                const row = Math.floor(index / colsCount);
                 const colOffset = midCol - col;
+                const rowOffset = midRow - row;
                 const isCardHovered = hoveredCardId === venture.id;
 
                 // Compute target offsets when in gathered stacked deck state (progress = 0)
                 const targetX = colOffset * 105;
-                const targetY = (index % 2 === 0 ? -12 : 12);
+                const targetY = rowOffset * 105;
+                const jitter = (index % 2 === 0 ? -12 : 12);
                 const initialRotate = colOffset * 7 + (index % 2 === 0 ? -3 : 3);
 
                 // Interpolated values based on effectiveProgress (0.0 stacked -> 1.0 grid)
                 const currentX = targetX * (1 - effectiveProgress);
                 const currentY = targetY * (1 - effectiveProgress);
+                const currentJitter = jitter * (1 - effectiveProgress);
                 const currentRotate = initialRotate * (1 - effectiveProgress);
                 const currentScale = 0.75 + (1 - 0.75) * effectiveProgress;
                 const currentOpacity = 0.3 + (1 - 0.3) * effectiveProgress;
 
                 // Z-Index hierarchy
-                const baseZ = Math.max(10, 50 - Math.abs(colOffset) * 10);
+                const baseZ = Math.max(10, 50 - Math.abs(colOffset) * 10 - Math.abs(rowOffset) * 5);
                 const zIndex = isCardHovered ? 150 : Math.round(baseZ);
 
-                let transform = `translate3d(${currentX}%, ${currentY}px, 0px) rotate(${currentRotate}deg) scale(${currentScale})`;
+                let transform = `translate3d(${currentX}%, calc(${currentY}% + ${currentJitter}px), 0px) rotate(${currentRotate}deg) scale(${currentScale})`;
                 if (isCardHovered && effectiveProgress > 0.5) {
-                  transform = `translate3d(${currentX}%, ${currentY - 10}px, 40px) rotate(0deg) scale(${currentScale * 1.03})`;
+                  transform = `translate3d(${currentX}%, calc(${currentY}% + ${currentJitter - 10}px), 40px) rotate(0deg) scale(${currentScale * 1.03})`;
                 }
 
                 return (

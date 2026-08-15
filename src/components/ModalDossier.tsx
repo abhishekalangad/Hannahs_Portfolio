@@ -241,6 +241,56 @@ export const ModalDossier: React.FC<ModalDossierProps> = ({ modalId, onClose, on
           </div>
         </div>
 
+        {/* Instagram Channels */}
+        {data.instagramLinks && data.instagramLinks.length > 0 && (
+          <div style={{ marginBottom: '2rem' }}>
+            <span style={{ fontSize: '0.72rem', color: 'var(--text-card-muted)', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: '0.75rem', display: 'block' }}>
+              Instagram Channels
+            </span>
+            <div style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap' }}>
+              {data.instagramLinks.map((url, i) => {
+                const username = url.split('instagram.com/')[1]?.replace(/\/$/, '') || 'Instagram';
+                return (
+                  <a
+                    key={i}
+                    href={url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn-secondary"
+                    style={{
+                      borderRadius: '9999px',
+                      fontSize: '0.8rem',
+                      display: 'inline-flex',
+                      alignItems: 'center',
+                      gap: '0.45rem',
+                      borderColor: 'rgba(255, 255, 255, 0.15)',
+                      backgroundColor: 'rgba(255, 255, 255, 0.05)',
+                      padding: '0.45rem 1.1rem'
+                    }}
+                  >
+                    <svg
+                      width="13"
+                      height="13"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      style={{ color: 'var(--lime)' }}
+                    >
+                      <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                      <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                      <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+                    </svg>
+                    <span>@{username}</span>
+                  </a>
+                );
+              })}
+            </div>
+          </div>
+        )}
+
         {/* Live Site IFrame Preview */}
         {data.iframeUrl && (
           <div style={{ marginBottom: '2rem' }}>
@@ -338,7 +388,7 @@ export const ModalDossier: React.FC<ModalDossierProps> = ({ modalId, onClose, on
           }}
         >
           <div style={{ display: 'flex', alignItems: 'center', gap: '0.65rem', flexWrap: 'wrap' }}>
-            {data.link && data.link !== '/Hannah_Elangovan_Resume.pdf' && (
+            {data.link && data.link !== '/resume.pdf' && (
               <a
                 href={data.link}
                 target="_blank"

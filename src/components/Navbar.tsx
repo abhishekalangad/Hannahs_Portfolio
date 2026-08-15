@@ -140,7 +140,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenResumeModal, onToast }) =>
           <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
             {/* Download Resume Button */}
             <a
-              href="/Hannah_Elangovan_Resume.pdf"
+              href="/resume.pdf"
               download="Hannah_Elangovan_Resume.pdf"
               onClick={() => onToast('Downloading Hannah Elangovan Resume PDF...')}
               style={{
@@ -161,15 +161,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenResumeModal, onToast }) =>
               <span>Download Resume</span>
             </a>
 
-            {/* Dossier CTA */}
-            <button
-              onClick={onOpenResumeModal}
-              className="btn-primary desktop-only"
-              style={{ padding: '0.42rem 1.1rem', fontSize: '0.78rem' }}
-            >
-              <FileText size={12} />
-              <span>Dossier</span>
-            </button>
+
 
             {/* Mobile toggle */}
             <button
@@ -223,7 +215,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenResumeModal, onToast }) =>
           </ul>
           <div style={{ marginTop: '2.5rem', display: 'flex', flexDirection: 'column', gap: '0.85rem', width: '100%', maxWidth: '280px' }}>
             <a
-              href="/Hannah_Elangovan_Resume.pdf"
+              href="/resume.pdf"
               download="Hannah_Elangovan_Resume.pdf"
               onClick={() => {
                 setMobileMenuOpen(false);
@@ -241,14 +233,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenResumeModal, onToast }) =>
               <Download size={15} />
               <span>Download Resume PDF</span>
             </a>
-            <button
-              onClick={() => { setMobileMenuOpen(false); onOpenResumeModal(); }}
-              className="btn-primary"
-              style={{ width: '100%', padding: '0.75rem', fontSize: '0.86rem' }}
-            >
-              <FileText size={15} />
-              <span>Executive Dossier</span>
-            </button>
+
           </div>
         </div>
       )}
