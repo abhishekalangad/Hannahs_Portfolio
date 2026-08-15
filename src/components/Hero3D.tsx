@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowRight, MapPin, Linkedin, Mail } from 'lucide-react';
+import { ArrowRight, MapPin, Linkedin } from 'lucide-react';
 import { personalData } from '../data/portfolioData';
 import { useTilt, useMagnetic } from '../utils/animations';
 
@@ -132,42 +132,6 @@ export const Hero3D: React.FC = () => {
             </div>
 
           </div>{/* end grid */}
-
-          {/* Divider */}
-          <div className="reveal reveal-delay-4" style={{ height: '1px', background: 'rgba(78,106,156,0.25)', marginBottom: 'clamp(1.25rem, 2.5vw, 1.75rem)', marginTop: 'clamp(1.25rem, 2.5vw, 1.75rem)' }} />
-
-          {/* Quick-facts */}
-          <div className="reveal reveal-delay-5" style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 160px), 1fr))',
-            gap: 'clamp(0.85rem, 2.5vw, 1.5rem)'
-          }}>
-            {[
-              { label: 'Current Role',         value: 'Founder & CEO',      sub: 'Web Mall (Pvt) Ltd' },
-              { label: 'Legal Studies',         value: 'LL.B Candidate',     sub: 'University of London' },
-              { label: 'Teaching Credential',   value: 'Dip.LCM (TD)',       sub: 'Univ. of West London (LCME)' },
-              { label: 'Email',                 value: personalData.email,   sub: personalData.phone, isEmail: true }
-            ].map((fact, i) => (
-              <div key={i}>
-                <span style={{ display: 'block', fontSize: '0.64rem', color: 'var(--text-card-muted)', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.07em', marginBottom: '0.28rem' }}>
-                  {fact.label}
-                </span>
-                {fact.isEmail ? (
-                  <a href={`mailto:${fact.value}`} style={{ display: 'flex', alignItems: 'center', gap: '0.35rem', textDecoration: 'none' }}>
-                    <Mail size={12} color="var(--lime)" />
-                    <span style={{ fontSize: 'clamp(0.72rem, 1.1vw, 0.82rem)', color: 'var(--text-card-primary)', fontWeight: 600, wordBreak: 'break-all' }}>{fact.value}</span>
-                  </a>
-                ) : (
-                  <span style={{ display: 'block', fontSize: 'clamp(0.82rem, 1.3vw, 0.92rem)', color: 'var(--text-card-primary)', fontWeight: 600, letterSpacing: '-0.02em' }}>
-                     {fact.value}
-                  </span>
-                )}
-                <span style={{ display: 'block', fontSize: '0.74rem', color: 'var(--text-card-muted)', marginTop: '0.1rem' }}>
-                  {fact.sub}
-                </span>
-              </div>
-            ))}
-          </div>
 
           {/* Keyframe & media query CSS */}
           <style>{`
